@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi</artifactId>
+    <artifactId>baobeibot</artifactId>
     <version>4.7.9</version>
     <packaging>jar</packaging>
 
-    <name>ruoyi</name>
+    <name>baobeiBot</name>
     <url>http://www.ruoyi.vip</url>
-    <description>若依管理系统</description>
+    <description>机器人管理系统</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -58,6 +58,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>6.5.0</version>
         </dependency>
 
         <!-- SpringBoot Web容器 -->
@@ -210,7 +216,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        
+
         <!-- 防止进入swagger页面报类型转换错误，排除3.0.0中的引用，手动增加1.6.2版本 -->
         <dependency>
             <groupId>io.swagger</groupId>
@@ -244,7 +250,7 @@
                     <fork>true</fork> <!-- 如果没有该配置，devtools不会生效 -->
                 </configuration>
             </plugin>
-            <!-- YUI Compressor (CSS/JS压缩) 
+            <!-- YUI Compressor (CSS/JS压缩)
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>yuicompressor-maven-plugin</artifactId>
